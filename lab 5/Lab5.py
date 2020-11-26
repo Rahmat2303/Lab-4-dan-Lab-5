@@ -1,3 +1,5 @@
+daftar_mahasiswa = {'nama':'ari', 'nim':'2323', 'tugas':'80', 'uts':'90', 'uas':'85'}
+
 print("Program input nilai")
 print("===================")
 
@@ -7,23 +9,22 @@ while tambah:
     if tambahkan == "l":
         tambah = False
     else:
-        print("Tambah Data")
-        nama = input("Nama        : ")
-        nim = input("NIM         : ")
-        tugas = int(input("Nilai Tugas : "))
-        uts = int(input("Nilai UTS   : "))
-        uas = int(input("Nilai UAS   : "))
+        print("Tambah data")
+        daftar_semua = daftar_mahasiswa.items()
+        for k, v in daftar_semua:
+            print(f'{k} : {v}')
 
-        Uts = uts * 35 / 100;
-        Uas = uas * 35 / 100;
-        Tugas = tugas * 30 / 100;
-        nilai_akhir = Uts + Uas + Tugas
+            Tugas = int(daftar_mahasiswa['tugas']) * 35 / 100
+            Uts = int(daftar_mahasiswa['uts']) * 30 / 100
+            Uas = int(daftar_mahasiswa['uas']) * 30 / 100
+            nilai_akhir = Tugas + Uts + Uas
 
 print("Daftar Nilai")
-print("=============================================================")
-print("| No |   Nama    |   NIM    | Tugas |  UTS  |  UAS  | Akhir |")
-print("=============================================================")
-print("| 1  |", nama, "|", nim, "|", tugas, "|", uts, "|", uas, "|", float(nilai_akhir), "|")
-print("=============================================================")
+print("=======================================================")
+print("| No | Nama  |  NIM   | Tugas |  UTS  |  UAS  | Akhir |")
+print("=======================================================")
+print("| 1  |", daftar_mahasiswa['nama'], "|", daftar_mahasiswa['nim'], "|", \
+      daftar_mahasiswa['tugas'], "|", daftar_mahasiswa['uts'], "|", daftar_mahasiswa['uas'], "|", float(nilai_akhir), "|")
+print("=======================================================")
 
 
